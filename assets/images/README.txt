@@ -1,0 +1,1 @@
+Placez ici vos photos. Vous pouvez notamment ajouter hero.jpg pour l'image principale.

@@ -1,0 +1,1067 @@
+:root{
+  --navy:#061936;--navy-2:#0b2348;--lime:#c7f23a;--lime-dark:#a9d71f;
+  --white:#fff;--text:#13213a;--muted:#68758a;--light:#f5f7fa;--border:#dfe5ed;
+  --radius:16px;--shadow:0 12px 35px rgba(6,25,54,.10);--max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;color:var(--text);line-height:1.6;background:var(--white)}
+a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+.site-header{height:88px;background:var(--navy);color:#fff;position:relative;z-index:100}
+.nav-wrap{height:100%;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;line-height:1.05;font-size:18px;letter-spacing:.3px}
+.brand strong,.brand span:last-child strong{color:var(--lime)}
+.brand-icon{font-size:34px}
+.main-nav{display:flex;align-items:center;gap:27px;font-size:14px;font-weight:600}
+.main-nav>a:not(.nav-cta){opacity:.92;position:relative;padding:32px 0}
+.main-nav>a:not(.nav-cta):after{content:"";height:2px;background:var(--lime);position:absolute;left:0;right:0;bottom:23px;transform:scaleX(0);transition:.2s}
+.main-nav>a.active:after,.main-nav>a:hover:after{transform:scaleX(1)}
+.nav-cta{background:var(--lime);color:var(--navy);padding:12px 20px;border-radius:8px;font-weight:800}
+.menu-toggle{display:none;background:none;border:0;color:#fff;width:42px;cursor:pointer}.menu-toggle span{display:block;height:2px;background:#fff;margin:6px 0;border-radius:2px}
+.hero{min-height:490px;background:linear-gradient(90deg,rgba(6,25,54,.98) 0%,rgba(6,25,54,.84) 45%,rgba(6,25,54,.25) 100%),url("../images/hero.jpg") center/cover;position:relative;color:#fff}
+.hero-content{min-height:490px;display:flex;align-items:center}.hero-copy{max-width:650px;padding:60px 0}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--lime);margin-bottom:12px}.eyebrow.dark{color:#92b923}
+h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bottom:22px}h1 span{color:var(--lime)}
+.hero-text{font-size:17px;max-width:560px;color:#eef3fb;margin-bottom:28px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:9px;padding:13px 22px;font:700 14px Inter;cursor:pointer;transition:.2s}
+.btn-primary{background:var(--lime);color:var(--navy)}.btn-primary:hover{background:var(--lime-dark);transform:translateY(-2px)}
+.inscription-btn {
+  padding: 17px 35px;
+  font-size: 16px;
+  gap: 20px;
+}
+.inscription-icon {
+  font-size: 22px;
+}
+/* =========================================================
+   BOUTONS
+   ========================================================= */
+
+.btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: var(--navy);
+}
+
+.btn-dark {
+    background: var(--navy);
+    color: #fff;
+}
+
+.btn-dark:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BANDEAU DES POINTS FORTS
+   ========================================================= */
+
+.feature-strip {
+    background: #fff;
+    padding: 20px 0;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 2;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+}
+
+.feature-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 48px;
+    height: 48px;
+    background: var(--navy);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 22px;
+}
+
+.feature-card h3 {
+    font-size: 15px;
+}
+
+.feature-card p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section {
+    padding: 80px 0;
+}
+
+.section-light {
+    background: #fff;
+}
+
+.soft-bg {
+    background: var(--light);
+}
+
+
+/* =========================================================
+   BLOCS EN DEUX COLONNES
+   ========================================================= */
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.split-copy h2,
+.section h2 {
+    font-size: 36px;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+}
+
+.split-copy > p:not(.eyebrow) {
+    color: var(--muted);
+    margin-bottom: 14px;
+    max-width: 540px;
+}
+
+.split-copy .btn {
+    margin-top: 12px;
+}
+
+
+/* =========================================================
+   IMAGES / PLACEHOLDERS
+   ========================================================= */
+
+.image-placeholder {
+    min-height: 280px;
+    background: linear-gradient(135deg, #dce4ee, #aebdce);
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    color: var(--navy);
+    overflow: hidden;
+}
+
+.image-placeholder > div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-items: center;
+    font-weight: 700;
+}
+
+.image-placeholder span {
+    font-size: 32px;
+}
+
+.image-placeholder small {
+    font-weight: 500;
+    color: #52657e;
+}
+
+.tall {
+    min-height: 390px;
+}
+
+
+/* =========================================================
+   APERÇU DES CRÉNEAUX SUR LA PAGE D'ACCUEIL
+   ========================================================= */
+
+.schedule-preview {
+    background: var(--navy);
+    color: #fff;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.light-heading h2 {
+    margin: 0;
+}
+
+.text-link {
+    color: var(--lime);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.schedule-home-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.schedule-card {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    gap: 14px;
+}
+
+.schedule-card > span {
+    display: grid;
+    place-items: center;
+    background: rgba(199, 242, 58, 0.14);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+.schedule-card strong,
+.schedule-card small {
+    display: block;
+}
+
+.schedule-card small {
+    font-size: 12px;
+    color: #b9c4d4;
+}
+
+
+/* =========================================================
+   TABLEAU DES CRÉNEAUX
+   ========================================================= */
+
+.schedule-table {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: var(--shadow);
+}
+
+.schedule-row {
+    display: grid;
+
+    /* Jour / Horaire / Type */
+    grid-template-columns: 1fr 1.2fr 1fr;
+
+    align-items: center;
+    gap: 20px;
+
+    padding: 18px 22px;
+
+    border-top: 1px solid var(--border);
+}
+
+.schedule-row:first-child {
+    border-top: none;
+}
+
+
+/* En-tête du tableau */
+
+.schedule-row.header {
+    background: var(--navy);
+    color: #fff;
+
+    border-top: none;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* Texte du tableau */
+
+.schedule-row strong {
+    font-size: 14px;
+}
+
+.schedule-row > span {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+
+/* Étiquette "Jeu libre" / "Entraînement" */
+
+.tag {
+    display: inline-block;
+
+    width: max-content;
+
+    padding: 5px 12px;
+
+    background: #e9edf2;
+    color: #27384f;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.tag-green {
+    background: #edf8c9;
+    color: #486300;
+}
+
+
+/* =========================================================
+   BLOC INFORMATION
+   ========================================================= */
+
+.notice {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: #f2f7df;
+
+    border-left: 4px solid var(--lime-dark);
+    border-radius: 8px;
+}
+
+.notice strong {
+    font-size: 14px;
+}
+
+.notice p {
+    color: #5d684b;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+
+/* =========================================================
+   BANDEAU CTA
+   ========================================================= */
+
+.cta-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    background: var(--light);
+
+    padding: 35px 45px;
+
+    border-radius: 18px;
+}
+
+.cta-banner h2 {
+    margin-bottom: 5px;
+}
+
+.cta-banner p:last-child {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    background: #041328;
+    color: #b7c2d1;
+
+    padding: 55px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-brand {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer h3 {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.footer-grid a:not(.brand) {
+    display: block;
+    font-size: 13px;
+    margin: 7px 0;
+}
+
+.footer p {
+    font-size: 13px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    margin-top: 40px;
+    padding-top: 18px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   EN-TÊTE DES PAGES
+   ========================================================= */
+
+.page-hero {
+    background: var(--navy);
+    color: #fff;
+
+    padding: 75px 0;
+}
+
+.page-hero h1 {
+    font-size: 52px;
+    margin-bottom: 12px;
+}
+
+.page-hero > div > p:last-child {
+    color: #c5cfdd;
+    max-width: 600px;
+}
+
+
+/* =========================================================
+   CARTES
+   ========================================================= */
+
+.cards-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.cards-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.info-card,
+.news-card,
+.team-card {
+    background: #fff;
+
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    overflow: hidden;
+}
+
+.info-card {
+    padding: 28px;
+}
+
+.info-card > span {
+    font-size: 30px;
+}
+
+.info-card h3 {
+    margin: 12px 0 7px;
+}
+
+.info-card p,
+.news-body p,
+.team-body p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ÉQUIPES
+   ========================================================= */
+
+.team-photo {
+    border-radius: 0;
+    min-height: 240px;
+}
+
+.team-body {
+    padding: 24px;
+}
+
+.team-body h2 {
+    margin: 12px 0 8px;
+}
+
+.dark-link {
+    color: var(--navy);
+}
+
+
+/* =========================================================
+   GALERIE
+   ========================================================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.gallery-item {
+    min-height: 240px;
+}
+
+.gallery-item.large {
+    grid-row: span 2;
+    min-height: 498px;
+}
+
+.gallery-item .image-placeholder {
+    height: 100%;
+    min-height: 240px;
+}
+
+
+/* =========================================================
+   ACTUALITÉS
+   ========================================================= */
+
+.news-image {
+    min-height: 190px;
+    border-radius: 0;
+}
+
+.news-body {
+    padding: 22px;
+}
+
+.news-body h2 {
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.date {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: #8ca51d;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.contact-list {
+    margin-top: 30px;
+
+    display: grid;
+    gap: 18px;
+}
+
+.contact-list > div {
+    display: flex;
+    gap: 14px;
+}
+
+.contact-list span {
+    font-size: 22px;
+}
+
+.contact-list strong {
+    font-size: 14px;
+}
+
+.contact-list p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   FORMULAIRE
+   ========================================================= */
+
+.form-card {
+    background: var(--light);
+
+    border-radius: 16px;
+
+    padding: 30px;
+}
+
+.form-card h2 {
+    font-size: 25px;
+}
+
+.form-card form {
+    display: grid;
+    gap: 16px;
+}
+
+.form-card label {
+    display: grid;
+    gap: 6px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.form-card input,
+.form-card textarea {
+    font: 14px Inter;
+
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: #fff;
+
+    outline: none;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+    border-color: #9ebf2c;
+}
+
+.form-help {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   INSCRIPTION
+   ========================================================= */
+
+.inscription-list {
+    list-style: none;
+
+    margin-top: 20px;
+
+    display: grid;
+    gap: 8px;
+
+    color: var(--text);
+    font-size: 14px;
+}
+
+.inscription-list li {
+    font-weight: 600;
+}
+
+.inscription-intro {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.inscription-choice {
+    display: grid;
+    gap: 12px;
+}
+
+.license-choice {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 16px;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    transition: 0.2s;
+}
+
+.license-choice:hover {
+    border-color: var(--lime-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow);
+}
+
+.license-choice > span {
+    display: grid;
+    place-items: center;
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    background: var(--navy);
+
+    border-radius: 50%;
+
+    font-size: 21px;
+}
+
+.license-choice strong,
+.license-choice small {
+    display: block;
+}
+
+.license-choice strong {
+    font-size: 14px;
+}
+
+.license-choice small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLETTE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .main-nav {
+        gap: 15px;
+    }
+
+    .main-nav > a:not(.nav-cta) {
+        font-size: 12px;
+    }
+
+    .schedule-home-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .split {
+        gap: 35px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .container {
+        width: min(var(--max), calc(100% - 28px));
+    }
+
+    .site-header {
+        height: 72px;
+    }
+
+    .brand {
+        font-size: 15px;
+    }
+
+    .brand-icon {
+        font-size: 28px;
+    }
+
+
+    /* Menu mobile */
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        position: absolute;
+
+        left: 0;
+        right: 0;
+        top: 72px;
+
+        background: var(--navy);
+
+        display: none;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 12px 20px 22px;
+
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+
+        gap: 0;
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .main-nav > a:not(.nav-cta) {
+        padding: 13px 5px;
+    }
+
+    .main-nav > a:not(.nav-cta)::after {
+        display: none;
+    }
+
+    .nav-cta {
+        text-align: center;
+        margin-top: 8px;
+    }
+
+
+    /* Hero */
+
+    .hero,
+    .hero-content {
+        min-height: 570px;
+    }
+
+    .hero {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(6, 25, 54, 0.9),
+                rgba(6, 25, 54, 0.96)
+            ),
+            url("../images/hero.jpg") center / cover;
+    }
+
+    .hero-copy {
+        padding: 45px 0;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+
+    /* Points forts */
+
+    .feature-strip {
+        padding: 15px 0;
+    }
+
+    .feature-grid {
+        gap: 10px;
+    }
+
+    .feature-card {
+        padding: 12px 15px;
+    }
+
+    .feature-card p {
+        font-size: 11px;
+    }
+
+
+    /* Sections */
+
+    .section {
+        padding: 58px 0;
+    }
+
+    .split,
+    .cards-2,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .split {
+        gap: 30px;
+    }
+
+    .split .image-placeholder {
+        order: -1;
+        min-height: 250px;
+    }
+
+    .section h2 {
+        font-size: 30px;
+    }
+
+    .page-hero {
+        padding: 55px 0;
+    }
+
+    .page-hero h1 {
+        font-size: 43px;
+    }
+
+
+    /* Créneaux accueil */
+
+    .schedule-home-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .cta-banner {
+        align-items: start;
+        flex-direction: column;
+        padding: 28px;
+    }
+
+
+    /* Footer */
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer-grid > div:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        gap: 10px;
+        flex-direction: column;
+    }
+
+
+    /* =====================================================
+       TABLEAU DES CRÉNEAUX SUR MOBILE
+       ===================================================== */
+
+    .schedule-table {
+        border-radius: 10px;
+    }
+
+    .schedule-row {
+        grid-template-columns: 1fr 1fr;
+
+        padding: 16px;
+
+        gap: 10px 15px;
+    }
+
+    /* On cache l'en-tête sur mobile */
+    .schedule-row.header {
+        display: none;
+    }
+
+    .schedule-row strong {
+        font-size: 14px;
+    }
+
+    .schedule-row > span {
+        font-size: 12px;
+    }
+
+    .schedule-row .tag {
+        font-size: 10px;
+        padding: 4px 9px;
+    }
+
+
+    /* Cartes / galerie */
+
+    .cards-3,
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item,
+    .gallery-item.large {
+        grid-row: auto;
+        min-height: 250px;
+    }
+
+    .gallery-item .image-placeholder {
+        min-height: 250px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — PETITS TÉLÉPHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid > div:first-child {
+        grid-column: auto;
+    }
+
+
+    /* Tableau très petit écran */
+
+    .schedule-row {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-row > span {
+        display: block;
+    }
+
+    .form-card {
+        padding: 22px;
+    }
+}
+
