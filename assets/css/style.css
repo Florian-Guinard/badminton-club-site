@@ -1,41 +1,213 @@
-:root{
-  --navy:#061936;--navy-2:#0b2348;--lime:#c7f23a;--lime-dark:#a9d71f;
-  --white:#fff;--text:#13213a;--muted:#68758a;--light:#f5f7fa;--border:#dfe5ed;
-  --radius:16px;--shadow:0 12px 35px rgba(6,25,54,.10);--max:1120px;
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+    --navy: #061936;
+    --navy-2: #0b2348;
+
+    --lime: #c7f23a;
+    --lime-dark: #a9d71f;
+
+    --white: #ffffff;
+    --text: #13213a;
+    --muted: #68758a;
+    --light: #f5f7fa;
+    --border: #dfe5ed;
+
+    --radius: 16px;
+    --shadow: 0 12px 35px rgba(6, 25, 54, 0.10);
+
+    /* Largeur maximale du contenu */
+    --max: 1200px;
 }
-*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
-body{font-family:Inter,Arial,sans-serif;color:var(--text);line-height:1.6;background:var(--white)}
-a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
-.container{width:min(var(--max),calc(100% - 40px));margin:auto}
-.site-header{height:88px;background:var(--navy);color:#fff;position:relative;z-index:100}
-.nav-wrap{height:100%;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;line-height:1.05;font-size:18px;letter-spacing:.3px}
-.brand strong,.brand span:last-child strong{color:var(--lime)}
-.brand-icon{font-size:34px}
-.main-nav{display:flex;align-items:center;gap:27px;font-size:14px;font-weight:600}
-.main-nav>a:not(.nav-cta){opacity:.92;position:relative;padding:32px 0}
-.main-nav>a:not(.nav-cta):after{content:"";height:2px;background:var(--lime);position:absolute;left:0;right:0;bottom:23px;transform:scaleX(0);transition:.2s}
-.main-nav>a.active:after,.main-nav>a:hover:after{transform:scaleX(1)}
-.nav-cta{background:var(--lime);color:var(--navy);padding:12px 20px;border-radius:8px;font-weight:800}
-.menu-toggle{display:none;background:none;border:0;color:#fff;width:42px;cursor:pointer}.menu-toggle span{display:block;height:2px;background:#fff;margin:6px 0;border-radius:2px}
-.hero{min-height:490px;background:linear-gradient(90deg,rgba(6,25,54,.98) 0%,rgba(6,25,54,.84) 45%,rgba(6,25,54,.25) 100%),url("../images/hero.jpg") center/cover;position:relative;color:#fff}
-.hero-content{min-height:490px;display:flex;align-items:center}.hero-copy{max-width:650px;padding:60px 0}
-.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--lime);margin-bottom:12px}.eyebrow.dark{color:#92b923}
-h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bottom:22px}h1 span{color:var(--lime)}
-.hero-text{font-size:17px;max-width:560px;color:#eef3fb;margin-bottom:28px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:9px;padding:13px 22px;font:700 14px Inter;cursor:pointer;transition:.2s}
-.btn-primary{background:var(--lime);color:var(--navy)}.btn-primary:hover{background:var(--lime-dark);transform:translateY(-2px)}
-.inscription-btn {
-  padding: 17px 35px;
-  font-size: 16px;
-  gap: 20px;
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-.inscription-icon {
-  font-size: 22px;
+
+html {
+    scroll-behavior: smooth;
 }
+
+body {
+    font-family: Inter, Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background: var(--white);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   CONTENEUR
+   ========================================================= */
+
+.container {
+    width: min(var(--max), calc(100% - 40px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER / NAVIGATION
+   ========================================================= */
+
+.site-header {
+    height: 88px;
+    background: var(--navy);
+    color: #fff;
+    position: relative;
+    z-index: 100;
+}
+
+.nav-wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-weight: 800;
+    line-height: 1.05;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+}
+
+.brand strong,
+.brand span:last-child strong {
+    color: var(--lime);
+}
+
+.brand-icon {
+    font-size: 34px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.main-nav > a:not(.nav-cta) {
+    opacity: 0.92;
+    position: relative;
+    padding: 32px 0;
+}
+
+.main-nav > a:not(.nav-cta)::after {
+    content: "";
+
+    height: 2px;
+
+    background: var(--lime);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 23px;
+
+    transform: scaleX(0);
+    transition: 0.2s;
+}
+
+.main-nav > a.active::after,
+.main-nav > a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-cta {
+    background: var(--lime);
+    color: var(--navy);
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    font-weight: 800;
+}
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: 0;
+
+    color: #fff;
+
+    width: 42px;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    height: 2px;
+
+    background: #fff;
+
+    margin: 6px 0;
+
+    border-radius: 2px;
+}
+
+
 /* =========================================================
    BOUTONS
    ========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: 0;
+    border-radius: 9px;
+
+    padding: 13px 22px;
+
+    font: 700 14px Inter, Arial, sans-serif;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background: var(--lime);
+    color: var(--navy);
+}
+
+.btn-primary:hover {
+    background: var(--lime-dark);
+    transform: translateY(-2px);
+}
 
 .btn-outline {
     border: 1px solid rgba(255, 255, 255, 0.75);
@@ -57,14 +229,108 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 }
 
 
+/* Bouton inscription accueil */
+
+.inscription-btn {
+    padding: 17px 35px;
+    font-size: 16px;
+    gap: 20px;
+}
+
+.inscription-icon {
+    font-size: 22px;
+}
+
+
 /* =========================================================
-   BANDEAU DES POINTS FORTS
+   HERO ACCUEIL
+   ========================================================= */
+
+.hero {
+    min-height: 490px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(6, 25, 54, 0.98) 0%,
+            rgba(6, 25, 54, 0.84) 45%,
+            rgba(6, 25, 54, 0.25) 100%
+        ),
+        url("../images/hero.jpg") center / cover;
+
+    position: relative;
+
+    color: #fff;
+}
+
+.hero-content {
+    min-height: 490px;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-copy {
+    max-width: 650px;
+    padding: 60px 0;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    color: var(--lime);
+
+    margin-bottom: 12px;
+}
+
+.eyebrow.dark {
+    color: #92b923;
+}
+
+h1 {
+    font-size: clamp(42px, 6vw, 68px);
+
+    line-height: 1.04;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 22px;
+}
+
+h1 span {
+    color: var(--lime);
+}
+
+.hero-text {
+    font-size: 17px;
+
+    max-width: 560px;
+
+    color: #eef3fb;
+
+    margin-bottom: 28px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   BANDEAU POINTS FORTS
    ========================================================= */
 
 .feature-strip {
     background: #fff;
+
     padding: 20px 0;
+
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+
     position: relative;
     z-index: 2;
 }
@@ -72,14 +338,18 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     gap: 22px;
 }
 
 .feature-card {
     display: flex;
     align-items: center;
+
     gap: 16px;
+
     padding: 14px 20px;
+
     border: 1px solid var(--border);
     border-radius: 13px;
 }
@@ -87,11 +357,18 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 .feature-icon {
     display: grid;
     place-items: center;
+
     flex: 0 0 48px;
+
+    width: 48px;
     height: 48px;
+
     background: var(--navy);
+
     border-radius: 50%;
+
     color: #fff;
+
     font-size: 22px;
 }
 
@@ -104,7 +381,6 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
     color: var(--muted);
 }
 
-
 /* =========================================================
    SECTIONS
    ========================================================= */
@@ -113,8 +389,15 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
     padding: 80px 0;
 }
 
+.section-gray{
+    background : #C269FF;
+}
 .section-light {
-    background: #fff;
+    background: var(--navy);
+
+    color: #fff;
+
+    padding: 75px 0;
 }
 
 .soft-bg {
@@ -123,27 +406,35 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 
 /* =========================================================
-   BLOCS EN DEUX COLONNES
+   BLOCS 2 COLONNES
    ========================================================= */
 
 .split {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 70px;
+
     align-items: center;
 }
 
 .split-copy h2,
 .section h2 {
     font-size: 36px;
+
     line-height: 1.15;
+
     letter-spacing: -1px;
+
     margin-bottom: 18px;
 }
 
 .split-copy > p:not(.eyebrow) {
     color: var(--muted);
+
     margin-bottom: 14px;
+
     max-width: 540px;
 }
 
@@ -153,25 +444,38 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 
 /* =========================================================
-   IMAGES / PLACEHOLDERS
+   IMAGES
    ========================================================= */
 
 .image-placeholder {
     min-height: 280px;
-    background: linear-gradient(135deg, #dce4ee, #aebdce);
+
+    background: linear-gradient(
+        135deg,
+        #dce4ee,
+        #aebdce
+    );
+
     border-radius: 14px;
+
     display: grid;
     place-items: center;
+
     color: var(--navy);
+
     overflow: hidden;
 }
 
 .image-placeholder > div {
     text-align: center;
+
     display: flex;
     flex-direction: column;
+
     gap: 7px;
+
     align-items: center;
+
     font-weight: 700;
 }
 
@@ -187,88 +491,33 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 .tall {
     min-height: 390px;
 }
-
-
-/* =========================================================
-   APERÇU DES CRÉNEAUX SUR LA PAGE D'ACCUEIL
-   ========================================================= */
-
-.schedule-preview {
-    background: var(--navy);
-    color: #fff;
-}
-
-.section-heading {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    margin-bottom: 25px;
-}
-
-.light-heading h2 {
-    margin: 0;
-}
-
-.text-link {
-    color: var(--lime);
-    font-weight: 700;
-    font-size: 14px;
-}
-
-.schedule-home-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-}
-
-.schedule-card {
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 12px;
-    padding: 18px;
-    display: flex;
-    gap: 14px;
-}
-
-.schedule-card > span {
-    display: grid;
-    place-items: center;
-    background: rgba(199, 242, 58, 0.14);
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-}
-
-.schedule-card strong,
-.schedule-card small {
-    display: block;
-}
-
-.schedule-card small {
-    font-size: 12px;
-    color: #b9c4d4;
-}
-
-
 /* =========================================================
    TABLEAU DES CRÉNEAUX
    ========================================================= */
 
 .schedule-table {
     width: 100%;
+
     border: 1px solid var(--border);
     border-radius: 14px;
+
     overflow: hidden;
+
     background: #fff;
-    box-shadow: var(--shadow);
 }
+
+
+/* =========================================================
+   LIGNES DU TABLEAU
+   ========================================================= */
 
 .schedule-row {
     display: grid;
 
-    /* Jour / Horaire / Type */
-    grid-template-columns: 1fr 1.2fr 1fr;
+    grid-template-columns: 1fr 1fr 1.3fr 1.8fr;
 
     align-items: center;
+
     gap: 20px;
 
     padding: 18px 22px;
@@ -276,59 +525,169 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
     border-top: 1px solid var(--border);
 }
 
-.schedule-row:first-child {
-    border-top: none;
-}
 
-
-/* En-tête du tableau */
+/* En-tête */
 
 .schedule-row.header {
     background: var(--navy);
+
     color: #fff;
 
     border-top: none;
 
     font-size: 13px;
+
     font-weight: 700;
 }
 
-
-/* Texte du tableau */
-
-.schedule-row strong {
-    font-size: 14px;
+.schedule-row.header > span {
+    color: #fff;
 }
+
+
+/* Contenu */
 
 .schedule-row > span {
     font-size: 14px;
+
     color: var(--muted);
 }
 
 
-/* Étiquette "Jeu libre" / "Entraînement" */
+/* =========================================================
+   PUBLIC
+   ========================================================= */
 
-.tag {
-    display: inline-block;
+.public-badge {
+    display: inline-flex;
 
-    width: max-content;
+    align-items: center;
+    justify-content: center;
 
-    padding: 5px 12px;
+    width: fit-content;
 
-    background: #e9edf2;
-    color: #27384f;
+    padding: 6px 13px;
 
     border-radius: 20px;
 
     font-size: 11px;
-    font-weight: 700;
+
+    font-weight: 800;
+
+    white-space: nowrap;
 }
 
-.tag-green {
+
+/* Adultes = BLEU */
+
+.badge-adultes {
+    background: #4D9CE8;
+
+    color: #173b70;
+}
+
+
+/* Jeunes = VERT */
+
+.badge-jeunes {
     background: #edf8c9;
+
     color: #486300;
 }
 
+
+/* =========================================================
+   TYPE DE CRÉNEAU
+   ========================================================= */
+
+.tag {
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 5px 11px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+/* Entraînement = JAUNE */
+
+.tag-green {
+    background: #fff3c4;
+
+    color: #7a5b00;
+}
+
+
+
+/* Tag jaune — Entraînement */
+.tag-yellow {
+    background: #fff3c4;
+    color: #7a5b00;
+}
+
+
+/* Tag gris — Jeu libre */
+.tag-gray {
+    background: #e9edf2;
+    color: #27384f;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+@media (max-width: 760px) {
+
+    .schedule-row {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+
+        padding: 16px;
+    }
+
+    .schedule-row.header {
+        display: none;
+    }
+
+    .schedule-row > span {
+        display: flex;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+        font-size: 13px;
+    }
+
+    .schedule-row > span::before {
+        content: attr(data-label);
+
+        font-weight: 700;
+
+        color: var(--navy);
+    }
+
+    .schedule-row strong {
+        font-size: 13px;
+    }
+
+    .schedule-row .tag {
+        font-size: 10px;
+
+        padding: 4px 9px;
+    }
+}
 
 /* =========================================================
    BLOC INFORMATION
@@ -342,6 +701,7 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
     background: #f2f7df;
 
     border-left: 4px solid var(--lime-dark);
+
     border-radius: 8px;
 }
 
@@ -351,19 +711,23 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 .notice p {
     color: #5d684b;
+
     font-size: 14px;
+
     margin-top: 4px;
 }
 
 
 /* =========================================================
-   BANDEAU CTA
+   CTA
    ========================================================= */
 
 .cta-banner {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
+
     gap: 30px;
 
     background: var(--light);
@@ -388,6 +752,7 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 .footer {
     background: #041328;
+
     color: #b7c2d1;
 
     padding: 55px 0 20px;
@@ -395,24 +760,31 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 .footer-grid {
     display: grid;
+
     grid-template-columns: 2fr 1fr 1fr;
+
     gap: 50px;
 }
 
 .footer-brand {
     color: #fff;
+
     margin-bottom: 15px;
 }
 
 .footer h3 {
     font-size: 14px;
+
     color: #fff;
+
     margin-bottom: 12px;
 }
 
 .footer-grid a:not(.brand) {
     display: block;
+
     font-size: 13px;
+
     margin: 7px 0;
 }
 
@@ -424,21 +796,24 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
     border-top: 1px solid rgba(255, 255, 255, 0.12);
 
     margin-top: 40px;
+
     padding-top: 18px;
 
     display: flex;
+
     justify-content: space-between;
 
     font-size: 12px;
 }
 
-
+/* 
 /* =========================================================
    EN-TÊTE DES PAGES
    ========================================================= */
 
 .page-hero {
     background: var(--navy);
+
     color: #fff;
 
     padding: 75px 0;
@@ -446,13 +821,15 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 .page-hero h1 {
     font-size: 52px;
+
     margin-bottom: 12px;
 }
 
 .page-hero > div > p:last-child {
     color: #c5cfdd;
+
     max-width: 600px;
-}
+} */
 
 
 /* =========================================================
@@ -461,14 +838,20 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 .cards-3 {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 22px;
 }
 
 .cards-2 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+
+    width: 100%;
 }
 
 .info-card,
@@ -477,6 +860,7 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
     background: #fff;
 
     border: 1px solid var(--border);
+
     border-radius: 15px;
 
     overflow: hidden;
@@ -498,7 +882,103 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 .news-body p,
 .team-body p {
     color: var(--muted);
+
     font-size: 14px;
+}
+
+
+/* =========================================================
+   LICENCES
+   ========================================================= */
+
+.license-card {
+    position: relative;
+
+    padding: 32px;
+
+    min-width: 0;
+}
+
+.license-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.license-label {
+    margin: 0 0 6px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: var(--lime-dark);
+}
+
+.license-card h3 {
+    margin: 0;
+
+    font-size: 28px;
+
+    color: var(--navy);
+}
+
+.license-price {
+    flex-shrink: 0;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    color: var(--navy);
+
+    white-space: nowrap;
+}
+
+.license-card > p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 14px;
+}
+
+.inscription-list {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 22px 0 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+
+    display: grid;
+
+    gap: 10px;
+}
+
+.inscription-list li {
+    color: var(--navy);
+
+    font-size: 13px;
+
+    font-weight: 600;
 }
 
 
@@ -508,6 +988,7 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 .team-photo {
     border-radius: 0;
+
     min-height: 240px;
 }
 
@@ -530,7 +1011,9 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 .gallery {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 18px;
 }
 
@@ -540,11 +1023,13 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 .gallery-item.large {
     grid-row: span 2;
+
     min-height: 498px;
 }
 
 .gallery-item .image-placeholder {
     height: 100%;
+
     min-height: 240px;
 }
 
@@ -555,6 +1040,7 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 .news-image {
     min-height: 190px;
+
     border-radius: 0;
 }
 
@@ -564,14 +1050,153 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 .news-body h2 {
     font-size: 20px;
+
     margin: 8px 0;
 }
 
 .date {
     font-size: 10px;
+
     font-weight: 800;
+
     letter-spacing: 1.2px;
+
     color: #8ca51d;
+}
+
+
+/* =========================================================
+   RÉSEAUX SOCIAUX
+   ========================================================= */
+
+.social-page {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.social-page h2 {
+    margin-bottom: 12px;
+}
+
+.social-intro {
+    color: var(--muted);
+
+    max-width: 600px;
+
+    margin: 0 auto 35px;
+
+    line-height: 1.6;
+}
+
+.social-links {
+    display: grid;
+
+    gap: 18px;
+
+    text-align: left;
+}
+
+.social-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 22px 25px;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+
+    transition: 0.2s;
+}
+
+.social-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow);
+
+    border-color: var(--lime-dark);
+}
+
+.social-icon {
+    width: 55px;
+    height: 55px;
+
+    flex: 0 0 55px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 14px;
+
+    color: #fff;
+
+    font-size: 28px;
+
+    font-weight: 800;
+}
+
+.facebook-icon {
+    background: #1877f2;
+
+    font-family: Arial, sans-serif;
+}
+
+.instagram-icon {
+    background: linear-gradient(
+        135deg,
+        #833ab4,
+        #fd1d1d,
+        #fcb045
+    );
+
+    font-size: 34px;
+}
+
+.social-content {
+    flex: 1;
+}
+
+.social-content strong {
+    display: block;
+
+    color: var(--navy);
+
+    font-size: 17px;
+
+    margin-bottom: 4px;
+}
+
+.social-content span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.social-arrow {
+    color: var(--navy);
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.social-card:hover .social-arrow {
+    transform: translateX(5px);
 }
 
 
@@ -581,7 +1206,9 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 .contact-grid {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 70px;
 }
 
@@ -589,11 +1216,13 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
     margin-top: 30px;
 
     display: grid;
+
     gap: 18px;
 }
 
 .contact-list > div {
     display: flex;
+
     gap: 14px;
 }
 
@@ -607,6 +1236,7 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 .contact-list p {
     font-size: 13px;
+
     color: var(--muted);
 }
 
@@ -629,24 +1259,28 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 .form-card form {
     display: grid;
+
     gap: 16px;
 }
 
 .form-card label {
     display: grid;
+
     gap: 6px;
 
     font-size: 13px;
+
     font-weight: 700;
 }
 
 .form-card input,
 .form-card textarea {
-    font: 14px Inter;
+    font: 14px Inter, Arial, sans-serif;
 
     padding: 12px 14px;
 
     border: 1px solid var(--border);
+
     border-radius: 8px;
 
     background: #fff;
@@ -661,96 +1295,13 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 .form-help {
     font-size: 11px;
+
     color: var(--muted);
 }
 
 
 /* =========================================================
-   INSCRIPTION
-   ========================================================= */
-
-.inscription-list {
-    list-style: none;
-
-    margin-top: 20px;
-
-    display: grid;
-    gap: 8px;
-
-    color: var(--text);
-    font-size: 14px;
-}
-
-.inscription-list li {
-    font-weight: 600;
-}
-
-.inscription-intro {
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-.inscription-choice {
-    display: grid;
-    gap: 12px;
-}
-
-.license-choice {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-    padding: 16px;
-
-    background: #fff;
-
-    border: 1px solid var(--border);
-    border-radius: 10px;
-
-    transition: 0.2s;
-}
-
-.license-choice:hover {
-    border-color: var(--lime-dark);
-
-    transform: translateY(-2px);
-
-    box-shadow: var(--shadow);
-}
-
-.license-choice > span {
-    display: grid;
-    place-items: center;
-
-    width: 45px;
-    height: 45px;
-
-    flex-shrink: 0;
-
-    background: var(--navy);
-
-    border-radius: 50%;
-
-    font-size: 21px;
-}
-
-.license-choice strong,
-.license-choice small {
-    display: block;
-}
-
-.license-choice strong {
-    font-size: 14px;
-}
-
-.license-choice small {
-    color: var(--muted);
-    font-size: 12px;
-}
-
-
-/* =========================================================
-   RESPONSIVE — TABLETTE
+   TABLETTE
    ========================================================= */
 
 @media (max-width: 900px) {
@@ -782,13 +1333,13 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
 
 /* =========================================================
-   RESPONSIVE — MOBILE
+   MOBILE
    ========================================================= */
 
 @media (max-width: 760px) {
 
     .container {
-        width: min(var(--max), calc(100% - 28px));
+        width: calc(100% - 28px);
     }
 
     .site-header {
@@ -803,8 +1354,7 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
         font-size: 28px;
     }
 
-
-    /* Menu mobile */
+    /* Menu */
 
     .menu-toggle {
         display: block;
@@ -815,6 +1365,7 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
         left: 0;
         right: 0;
+
         top: 72px;
 
         background: var(--navy);
@@ -822,6 +1373,7 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
         display: none;
 
         flex-direction: column;
+
         align-items: stretch;
 
         padding: 12px 20px 22px;
@@ -845,6 +1397,7 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
     .nav-cta {
         text-align: center;
+
         margin-top: 8px;
     }
 
@@ -916,6 +1469,7 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
     .split .image-placeholder {
         order: -1;
+
         min-height: 250px;
     }
 
@@ -932,7 +1486,7 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
     }
 
 
-    /* Créneaux accueil */
+    /* Créneaux */
 
     .schedule-home-grid {
         grid-template-columns: 1fr;
@@ -940,13 +1494,20 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
     .section-heading {
         align-items: start;
+
         gap: 15px;
+
         flex-direction: column;
     }
 
+
+    /* CTA */
+
     .cta-banner {
         align-items: start;
+
         flex-direction: column;
+
         padding: 28px;
     }
 
@@ -955,6 +1516,7 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
     .footer-grid {
         grid-template-columns: 1fr 1fr;
+
         gap: 30px;
     }
 
@@ -964,46 +1526,63 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
     .footer-bottom {
         gap: 10px;
+
         flex-direction: column;
     }
 
 
-    /* =====================================================
-       TABLEAU DES CRÉNEAUX SUR MOBILE
-       ===================================================== */
+    /* Tableaux */
 
     .schedule-table {
         border-radius: 10px;
     }
 
+ @media (max-width: 760px) {
+
     .schedule-row {
-        grid-template-columns: 1fr 1fr;
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 8px;
 
         padding: 16px;
-
-        gap: 10px 15px;
     }
 
-    /* On cache l'en-tête sur mobile */
     .schedule-row.header {
         display: none;
     }
 
-    .schedule-row strong {
-        font-size: 14px;
+    .schedule-row > span {
+        display: flex;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+        font-size: 13px;
     }
 
-    .schedule-row > span {
-        font-size: 12px;
+    .schedule-row > span::before {
+        content: attr(data-label);
+
+        font-weight: 700;
+
+        color: var(--navy);
+    }
+
+    .schedule-row strong {
+        font-size: 13px;
     }
 
     .schedule-row .tag {
         font-size: 10px;
+
         padding: 4px 9px;
     }
+}
 
-
-    /* Cartes / galerie */
+    /* Cartes */
 
     .cards-3,
     .gallery {
@@ -1013,17 +1592,71 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
     .gallery-item,
     .gallery-item.large {
         grid-row: auto;
+
         min-height: 250px;
     }
 
     .gallery-item .image-placeholder {
         min-height: 250px;
     }
+
+
+    /* Licences */
+
+    .license-card {
+        padding: 24px;
+    }
+
+    .license-header {
+        gap: 15px;
+    }
+
+    .license-card h3 {
+        font-size: 23px;
+    }
+
+    .license-price {
+        font-size: 21px;
+    }
+
+
+    /* Réseaux sociaux */
+
+    .social-card {
+        padding: 18px;
+
+        gap: 14px;
+    }
+
+    .social-icon {
+        width: 48px;
+        height: 48px;
+
+        flex-basis: 48px;
+
+        font-size: 24px;
+    }
+
+    .instagram-icon {
+        font-size: 30px;
+    }
+
+    .social-content strong {
+        font-size: 15px;
+    }
+
+    .social-content span {
+        font-size: 12px;
+    }
+
+    .social-arrow {
+        font-size: 18px;
+    }
 }
 
 
 /* =========================================================
-   RESPONSIVE — PETITS TÉLÉPHONES
+   PETITS TÉLÉPHONES
    ========================================================= */
 
 @media (max-width: 420px) {
@@ -1034,6 +1667,7 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
 
     .hero-actions {
         flex-direction: column;
+
         align-items: stretch;
     }
 
@@ -1049,9 +1683,6 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
         grid-column: auto;
     }
 
-
-    /* Tableau très petit écran */
-
     .schedule-row {
         grid-template-columns: 1fr;
     }
@@ -1063,5 +1694,49 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin-bo
     .form-card {
         padding: 22px;
     }
+
+    .license-header {
+        align-items: flex-start;
+    }
+
+    .license-price {
+        font-size: 19px;
+    }
 }
 
+/* =========================================================
+   LICENCES - CORRECTION LARGEUR
+   ========================================================= */
+
+.license-cards-container {
+    width: min(1200px, calc(100% - 40px)) !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+.license-cards-container .cards-2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    gap: 30px !important;
+}
+
+.license-cards-container .license-card {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+
+    .license-cards-container {
+        width: calc(100% - 28px) !important;
+    }
+
+    .license-cards-container .cards-2 {
+        grid-template-columns: 1fr !important;
+    }
+
+}
