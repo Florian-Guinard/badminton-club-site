@@ -246,21 +246,18 @@ img {
    HERO ACCUEIL
    ========================================================= */
 
-.hero {
-    min-height: 490px;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(6, 25, 54, 0.98) 0%,
-            rgba(6, 25, 54, 0.84) 45%,
-            rgba(6, 25, 54, 0.25) 100%
-        ),
-        url("../images/hero.jpg") center / cover;
-
-    position: relative;
-
-    color: #fff;
+.hero { min-height: 490px; 
+    background: linear-gradient( 
+        90deg, 
+        rgba(6, 25, 54, 0.98) 0%, 
+        rgba(6, 25, 54, 0.84) 45%,
+        rgba(6, 25, 54, 0.25) 100% ), 
+     
+     url("../images/salle_pc.png") center / cover; 
+     
+     position: relative; 
+     
+     color: #fff; 
 }
 
 .hero-content {
@@ -981,6 +978,23 @@ h1 span {
     font-weight: 600;
 }
 
+/* =========================================================
+   PHOTO QUI SOMME NOUS ?
+   ========================================================= */
+
+.photo-club {
+    overflow: hidden;
+}
+
+.photo-club img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+
+    transform: scale(1.03);
+}
 
 /* =========================================================
    ÉQUIPES
@@ -1404,19 +1418,21 @@ h1 span {
 
     /* Hero */
 
-    .hero,
+    
     .hero-content {
         min-height: 570px;
     }
 
     .hero {
+        background-repeat: no-repeat;
         background:
             linear-gradient(
-                180deg,
-                rgba(6, 25, 54, 0.9),
-                rgba(6, 25, 54, 0.96)
+                rgba(6, 25, 54, 0.85) 0%,
+                rgba(6, 25, 54, 0.55) 35%,
+                rgba(6, 25, 54, 0.15) 70%,
+                rgba(6, 25, 54, 0) 100%
             ),
-            url("../images/hero.jpg") center / cover;
+            url("../images/salle_tel.png") center / cover;
     }
 
     .hero-copy {
