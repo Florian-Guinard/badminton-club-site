@@ -237,6 +237,13 @@ img {
     gap: 20px;
 }
 
+.renouvellement {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto
+}
+
 .inscription-icon {
     font-size: 22px;
 }
@@ -387,7 +394,7 @@ h1 span {
 }
 
 .section-gray{
-    background : #C269FF;
+    background : hsl(280, 16%, 96%);
 }
 .section-light {
     background: var(--navy);
