@@ -249,6 +249,26 @@ img {
 }
 
 
+.club-title-container {
+    background-color: var(--navy);
+    width: 100%;
+}
+
+.club-title {
+    text-align: center;
+    margin: 0;
+    padding: 15px;
+    color: white;
+}
+
+.grand_h2 {
+    font-size: 50px;
+}
+
+.grand_h2_green {
+    font-size: 50px;
+    color : var(--lime);
+}
 /* =========================================================
    HERO ACCUEIL
    ========================================================= */
@@ -275,8 +295,7 @@ img {
 }
 
 .hero-copy {
-    max-width: 650px;
-    padding: 60px 0;
+    max-width: none;
 }
 
 .eyebrow {
@@ -293,19 +312,7 @@ img {
     color: #92b923;
 }
 
-h1 {
-    font-size: clamp(42px, 6vw, 68px);
 
-    line-height: 1.04;
-
-    letter-spacing: -2px;
-
-    margin-bottom: 22px;
-}
-
-h1 span {
-    color: var(--lime);
-}
 
 .hero-text {
     font-size: 17px;
